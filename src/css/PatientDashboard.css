@@ -1,0 +1,91 @@
+
+.dashboard-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 10px 0;
+  border-bottom: 3px solid #007bff;
+}
+
+.dashboard-header h2 {
+  color: #0d6efd;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+
+.patient-card {
+  max-width: 650px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+}
+
+.patient-card:hover {
+  transform: translateY(-3px);
+}
+
+
+.section-title {
+  color: #495057;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #dee2e6;
+  padding-bottom: 8px;
+}
+
+
+.form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.form-control {
+  border-radius: 8px;
+  font-size: 15px;
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 6px rgba(13, 110, 253, 0.3);
+}
+
+
+.button-group button {
+  font-weight: 600;
+  border-radius: 210px;
+  padding: 8px 18px;
+  transition: all 0.3s ease;
+}
+
+.button-group button:hover {
+  transform: translateY(-1px);
+}
+
+
+.loading-screen,
+.error-screen {
+  text-align: center;
+  margin-top: 100px;
+  color: #6c757d;
+  font-size: 18px;
+}
+
+.loading-screen p {
+  margin-top: 10px;
+}
+

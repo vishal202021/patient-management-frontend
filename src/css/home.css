@@ -1,0 +1,97 @@
+.home-container {
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  font-family: 'Poppins', sans-serif;
+}
+
+.home-card {
+  background-color: #fff;
+  transition: all 0.4s ease-in-out;
+}
+.home-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+.text-gradient {
+  background: linear-gradient(45deg, #007bff, #6610f2);
+  background-clip: text; 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  color: transparent; 
+}
+
+
+/* .btn-login {
+  background: linear-gradient(45deg, #007bff, #00d4ff);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+.btn-login:hover {
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+  transform: translateY(-3px);
+} */
+
+
+/* .btn-signup {
+  background: linear-gradient(45deg, #28a745, #85ef47);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+.btn-signup:hover {
+  box-shadow: 0 0 15px rgba(40, 167, 69, 0.5);
+  transform: translateY(-3px);
+} */
+
+.btn-login {
+  background: linear-gradient(45deg, #007bff, #00d4ff, #007bff);
+  background-size: 200% 200%; 
+  color: white;
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  animation: gradientMove 4s ease infinite; 
+}
+
+.btn-login:hover {
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+  transform: translateY(-3px);
+}
+
+
+.btn-signup {
+  background: linear-gradient(45deg, #28a745, #85ef47, #28a745);
+  background-size: 200% 200%;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  animation: gradientMove 4s ease infinite;
+}
+
+.btn-signup:hover {
+  box-shadow: 0 0 20px rgba(40, 167, 69, 0.6);
+  transform: translateY(-3px);
+}
+
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
