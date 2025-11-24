@@ -43,17 +43,20 @@ const AdminAi = () => {
     }
   };
 
-  const sendMessage = async () => {
-    if (!input.trim()) return;
+  const sendMessage = async (customInput) => {
+    const finalMessage = customInput || input;
 
-    const userMsg = { role: "user", message: input };
+    if (!finalMessage.trim()) return;
+
+    const userMsg = { role: "user", message: finalMessage };
     setMessage((prev) => [...prev, userMsg]);
+
     setTyping(true);
 
     try {
       const res = await axios.post(
         `http://localhost:4004/api/ai/chat/${sessionId}`,
-        { message: input },
+        { message: finalMessage },
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -83,6 +86,18 @@ const AdminAi = () => {
     }
   };
 
+  // ⭐ NEW: Clickable suggestions
+  const suggestions = [
+    "Show today's patients",
+    "Show this month's patients",
+    "Show today's appointments",
+    "Show this month's appointments",
+    "Show total revenue",
+    "Show active bills",
+    "Appointments with status active",
+    "Appointments with status pending",
+  ];
+
   return (
     <div className="adminai-container">
 
@@ -90,6 +105,19 @@ const AdminAi = () => {
       <div className="adminai-header">
         <span className="adminai-logo">🤖</span>
         Admin AI Assistant
+      </div>
+
+      {/* ⭐ SUGGESTION BOX */}
+      <div className="adminai-suggestions">
+        {suggestions.map((s, idx) => (
+          <button
+            key={idx}
+            className="adminai-suggestion-btn"
+            onClick={() => sendMessage(s)}
+          >
+            {s}
+          </button>
+        ))}
       </div>
 
       {/* CHAT AREA */}
@@ -103,7 +131,6 @@ const AdminAi = () => {
           </div>
         ))}
 
-        {/* Typing dots */}
         {typing && (
           <div className="adminai-msg adminai-ai typing">
             <span></span><span></span><span></span>
@@ -123,7 +150,7 @@ const AdminAi = () => {
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
         />
 
-        <button onClick={sendMessage}>➤</button>
+        <button onClick={() => sendMessage()}>➤</button>
       </div>
 
       <button className="adminai-clear-btn" onClick={clearHistory}>
