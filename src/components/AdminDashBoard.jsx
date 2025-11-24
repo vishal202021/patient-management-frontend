@@ -12,6 +12,7 @@ import {HiOutlineDocumentText} from "react-icons/hi2";
 import AdminAnalytics from "./AdminAnalytics";
 import AdminNotification from "./AdminNotification";
 import AdminDoctors from "./AdminDoctors";
+import AdminAi from "./AdminAi";
 
 
 const AdminDashboard = () => {
@@ -89,6 +90,13 @@ const AdminDashboard = () => {
           <FaUserMd className="me-2" /> Admin Doctors
         </button>
 
+         <button
+          onClick={() => setActiveTab("ai")}
+          className={`btn ${activeTab === "ai" ? "btn-dark text-white" : "btn-outline-dark"}`}
+        >
+          <FaUserMd className="me-2" /> Admin AI
+        </button>
+
         
         <button onClick={handelLogout} className="btn btn-light text-dark">
           <IoIosLogOut className="me-2" /> Logout
@@ -112,8 +120,9 @@ const AdminDashboard = () => {
           <AdminNotification/>
         ):activeTab==="doctors"?(
           <AdminDoctors/>
-        ):
-        null}
+        ):activeTab==="ai"?(
+           <AdminAi/>
+        ):null}
       </div>
     </div>
   );

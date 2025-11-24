@@ -15,6 +15,7 @@ import AdminAnalytics from './components/AdminAnalytics.jsx';
 import AdminNotification from './components/AdminNotification.jsx';
 import Booking_Appointment from './components/Booking-Appointment.jsx';
 import AdminDoctors from './components/AdminDoctors.jsx';
+import AdminAi from './components/AdminAi.jsx';
 
   const router=createBrowserRouter([
     {
@@ -68,6 +69,10 @@ import AdminDoctors from './components/AdminDoctors.jsx';
          {
           path:"/admin_doctors",
           element:<AdminDoctors/>
+         },
+           {
+          path:"/admin_ai",
+          element:<AdminAi/>
          }
        ]
     }
