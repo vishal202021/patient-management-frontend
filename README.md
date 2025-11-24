@@ -1,16 +1,162 @@
-# React + Vite
+# 🏥 Patient Management System — Frontend (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **React Frontend** for the Patient Management System built using:
+- React (Vite)
+- Bootstrap (pure)
+- Axios
+- React Router DOM
+- JWT Authentication
 
-Currently, two official plugins are available:
+The frontend provides **role-based dashboards** for:
+- **Admin**
+- **Patient**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Fully integrated with backend microservices via API Gateway (`http://localhost:4004`).
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- **React 18**
+- **Vite**
+- **Bootstrap 5**
+- **React Router DOM**
+- **Axios**
+- **LocalStorage JWT Auth**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🗂️ Project Structure (Actual)
+src/
+├── components/
+│ ├── AdminAnalytics.jsx
+│ ├── AdminDashBoard.jsx
+│ ├── AdminDocs.jsx
+│ ├── AdminDoctors.jsx
+│ ├── AdminNotification.jsx
+│ ├── Billing.jsx
+│ ├── Booking-Appointment.jsx
+│ ├── EditPatient.jsx
+│ ├── Home.jsx
+│ ├── Login.jsx
+│ ├── PatientDashBoard.jsx
+│ ├── PatientForm.jsx
+│ ├── PatientTable.jsx
+│ └── SignUp.jsx
+│
+├── css/
+│ ├── AdminDashboard.css
+│ ├── App.css
+│ ├── PatientDashboard.css
+│ ├── home.css
+│ └── login.css
+│
+├── App.jsx
+├── main.jsx
+
+
+---
+
+## 👨‍⚕️ Admin Dashboard Features (Based on Real Components)
+
+### ✔ `AdminDashBoard.jsx`
+Main admin landing dashboard.
+
+### ✔ `PatientTable.jsx`  
+View all patients.
+
+### ✔ `PatientForm.jsx` / `EditPatient.jsx`  
+Add new patient  
+Edit patient information
+
+### ✔ `AdminDoctors.jsx`  
+Manage doctor list (CRUD).
+
+### ✔ `Billing.jsx`  
+Billing data (via Billing Service).
+
+### ✔ `AdminNotification.jsx`  
+View all system notifications  
+(mark as read / unread)
+
+### ✔ `AdminAnalytics.jsx`  
+Analytics dashboard connected to Kafka → Analytics Service
+
+---
+
+## 👤 Patient Dashboard Features (Based on Real Components)
+
+### ✔ `PatientDashBoard.jsx`
+Main patient dashboard.
+
+### ✔ Profile (View and update)
+
+### ✔ Book Appointment  
+Uses `Booking-Appointment.jsx` form.
+
+---
+
+## 🔐 Authentication Screens
+
+### ✔ `Login.jsx`  
+Login using JWT token from Auth Service.
+
+### ✔ `SignUp.jsx`  
+Register a patient.
+
+---
+
+## 🌐 Backend Communication
+
+All API calls go through:
+
+http://localhost:4004 (API Gateway)
+
+Examples:
+- `/auth/login`
+- `/patient/all`
+- `/appointments/book`
+- `/analytics/all`
+- `/notification/all`
+
+All axios calls are correctly pointing to API Gateway.
+VITE_API_BASE_URL=http://localhost:4004
+
+
+---
+
+## ▶️ Run the project
+
+Install dependencies
+npm install
+
+Run in development mode
+npm run dev
+
+Frontend will start at:
+http://localhost:5173
+
+📦 Deployment Options
+
+Netlify
+
+Vercel
+
+GitHub Pages
+
+Docker + Nginx (optional)
+
+⭐ If this project helped you, please star the repo!
+
+Backend Repo (microservices):
+👉 https://github.com/vishal202021/patient-management-system-microservices
+
+Frontend Repo:
+👉 https://github.com/vishal202021/patient-management-frontend
+
+
+
+ 
+
+
+
